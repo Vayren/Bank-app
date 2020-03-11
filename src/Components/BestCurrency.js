@@ -34,7 +34,7 @@ function BestCurrency(props) {
 
 	useEffect(() => {
 		async function fetchProduct() {
-			const respounse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${res[1].address} ${res[1].cityId}&key=AIzaSyD_pYIplFYtz8DGJm_Sq-bJ_PPs16hqzlE`);
+			const respounse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${res[1].address} ${res[1].cityId}&key=KEY`);
 			const json = await respounse.json();
 			setState(json.results.map(item => {
 				if(item.geometry.location) return {location: item.geometry.location, address: item.formatted_address};
