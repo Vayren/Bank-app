@@ -1,13 +1,13 @@
 import React, {useContext} from 'react';
 import Context from '../context';
 
-function Currency(props) {
+function Currency({currency, rate}) {
 	const { StyledTableRow, StyledTableCell } = useContext(Context);
 	return(
 		<StyledTableRow>
-        	<StyledTableCell>{props.currency}</StyledTableCell>
-            <StyledTableCell align="right">{Number(props.rate['bid'])}</StyledTableCell>
-            <StyledTableCell align="right">{Number(props.rate['ask'])}</StyledTableCell>
+        	<StyledTableCell>{currency}</StyledTableCell>
+            <StyledTableCell align="right">{Number(rate['bid'])}</StyledTableCell>
+            <StyledTableCell align="right">{Number(rate['ask'])}</StyledTableCell>
         </StyledTableRow>
 	)
 }

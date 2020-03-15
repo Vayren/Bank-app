@@ -2,7 +2,8 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker';
   
-function SimpleMap (props) {
+function Map ({ coords }) {
+
   let defaultProps = {
     center: {
       lat: 48.3794327,
@@ -11,18 +12,18 @@ function SimpleMap (props) {
     zoom: 15
   };
 
-  if(!props.coords[0]) return null;
+  if(!coords[0]) return null;
   return (
     <div style={{ height: '800px', width: '1200px'}}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyD_pYIplFYtz8DGJm_Sq-bJ_PPs16hqzlE" }}
-        defaultCenter={{lat: props.coords[0].location.lat, lng: props.coords[0].location.lng}}
+        bootstrapURLKeys={{ key: "KEY" }}
+        defaultCenter={{lat: coords[0].location.lat, lng: coords[0].location.lng}}
         defaultZoom={defaultProps.zoom}
       >
          <Marker
-            lat={props.coords[0].location.lat}
-            lng={props.coords[0].location.lng}
-            name={props.coords[0].address}
+            lat={coords[0].location.lat}
+            lng={coords[0].location.lng}
+            name={coords[0].address}
             color="blue"
           />
       </GoogleMapReact>
@@ -30,4 +31,4 @@ function SimpleMap (props) {
   );
 }
  
-export default SimpleMap;
+export default Map;

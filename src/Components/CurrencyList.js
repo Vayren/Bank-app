@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
 });
 
-function CurrencyList(props) {
+function CurrencyList({currencies}) {
 	const { StyledTableCell } = useContext(Context);
 	const classes = useStyles();
 
@@ -34,7 +34,7 @@ function CurrencyList(props) {
 			        </TableRow>
 			 	</TableHead>
 			 	<TableBody>
-		        	{Object.entries(props.currencies).map((arrayItem, index) => {
+		        	{Object.entries(currencies).map((arrayItem, index) => {
 						return <Currency currency={arrayItem[0]} rate={arrayItem[1]} key={index}/>
 					})}
 		        </TableBody>

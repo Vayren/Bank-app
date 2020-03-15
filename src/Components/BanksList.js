@@ -1,7 +1,7 @@
 import React from 'react';
 import Bank from './Bank';
 
-function BanksList(props) {
+function BanksList({banks}) {
 	const styles = {
 	    ul:{
 	    	listStyle: "none",
@@ -11,7 +11,7 @@ function BanksList(props) {
 	}  
 	return (
 		<ul style={styles.ul}>
-			{props.banks.map((bank, index) => {
+			{banks.map((bank, index) => {
 				return <Bank bank={bank} key={index + 1} currencies={bank.currencies}/>
 			})}
 		</ul>
